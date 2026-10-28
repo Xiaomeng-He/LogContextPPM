@@ -1,0 +1,16 @@
+BPIC12:
+  data_dir: 'BPIC12_data'
+  output_dir: 'BPIC12_data/LSTM'
+  log_prefix_len: 200
+  num_act: 40
+  input_dims: [66, 6]
+  num_nume_feature: 4
+  hidden_size: 64
+  dropout: 0.2
+  num_layers: 2
+  training:
+    batch_size: 64
+    lr: 0.0002
+    num_epochs: 200
+    val_batch_size: 128
+    test_batch_size: 256
