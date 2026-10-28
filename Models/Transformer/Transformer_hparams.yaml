@@ -1,0 +1,22 @@
+BPIC12:
+  data_dir: 'BPIC12_data'
+  output_dir: 'BPIC12_data/Transformer'
+  log_prefix_len: 200
+  trace_prefix_len: 162
+  suffix_len: 161
+  num_act: 40
+  input_dims: [66, 6]
+  num_nume_feature: 4
+  d_model: 64
+  num_heads: 4
+  d_ff: 128
+  dropout: 0.2
+  num_layers: 4
+  rm:
+    num_heads: 8
+  training:
+    batch_size: 64
+    lr: 0.0002
+    num_epochs: 200
+    val_batch_size: 512
+    test_batch_size: 256
