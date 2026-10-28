@@ -1,15 +1,3 @@
-# Tensor creation settings per dataset.
-# Relative paths are resolved from the repository root.
-#
-#   input_path        event log (.csv, or .zip containing one .csv)
-#   output_dir        folder for Tensors/, mean_dict.pt, std_dict.pt and log_info.yml
-#   log_prefix_len    number of most recent events in the whole log used as log prefix
-#   trace_prefix_len  maximum trace prefix length (max case length + 1 for SOC)
-#   trace_suffix_len  maximum trace suffix length (max case length + 1 for EOC)
-#   num_act           number of activity labels in the training set + 4 (PAD, unknown, SOC, EOC);
-#                     only used as a consistency check, the actual value is written to log_info.yml
-#   test_ratio, val_ratio, case_len_quantile are optional (defaults: 0.2, 0.25, 1.0)
-
 BPIC12:
   input_path: 'Data/bpic2012.csv'
   output_dir: 'BPIC12_data'
@@ -23,22 +11,6 @@ BPIC12:
   trace_prefix_len: 162
   trace_suffix_len: 162
   num_act: 40
-  cat_event_feature: ['org:resource', 'lifecycle:transition']
-  cat_case_feature: []
-  num_event_feature: []
-  num_case_feature: ['case:AMOUNT_REQ']
-
-# Synthetic log with the BPIC12 schema, created by `python tests/make_toy_log.py`
-TOY:
-  input_path: 'Data/toy.csv'
-  output_dir: 'TOY_data'
-  case_id: 'case:concept:name'
-  event_name: 'combined_activity'
-  timestamp: 'time:timestamp'
-  log_prefix_len: 50
-  trace_prefix_len: 25
-  trace_suffix_len: 25
-  num_act: 16
   cat_event_feature: ['org:resource', 'lifecycle:transition']
   cat_case_feature: []
   num_event_feature: []
